@@ -4,12 +4,12 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>尘生</title>
+  <title>Tag: hexo | 尘生</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="尘生">
 <meta property="og:type" content="website">
 <meta property="og:title" content="尘生">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/tags/hexo/index.html">
 <meta property="og:site_name" content="尘生">
 <meta property="og:description" content="尘生">
 <meta name="twitter:card" content="summary">
@@ -169,106 +169,52 @@
 
       <div class="body-wrap">
   
-    <article id="post-搭建hexo个人博客" class="article article-type-post" itemscope itemprop="blogPost">
   
-    <div class="article-meta">
-      <a href="/2016/01/13/搭建hexo个人博客/" class="article-date">
-  	<time datetime="2016-01-13T14:54:31.000Z" itemprop="datePublished">2016-01-13</time>
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2016" class="archive-year">2016</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2016/01/13/搭建hexo个人博客/" class="archive-article-date">
+  	<time datetime="2016-01-13T14:54:31.000Z" itemprop="datePublished">Jan 13</time>
 </a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
+        </div>
+    	 
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/13/搭建hexo个人博客/">搭建hexo个人博客</a>
+      <a class="archive-article-title" href="/2016/01/13/搭建hexo个人博客/">搭建hexo个人博客</a>
     </h1>
   
 
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="u642D_u5EFAhexo_u4E2A_u4EBA_u535A_u5BA2"><a href="#u642D_u5EFAhexo_u4E2A_u4EBA_u535A_u5BA2" class="headerlink" title="搭建hexo个人博客"></a>搭建hexo个人博客</h1><h2 id="1-_u5B89_u88C5Node_u548Cgit"><a href="#1-_u5B89_u88C5Node_u548Cgit" class="headerlink" title="1.安装Node和git"></a>1.安装Node和git</h2><p><a href="https://nodejs.org/en/" target="_blank" rel="external">https://nodejs.org/en/</a></p>
-<p><a href="https://desktop.github.com/" target="_blank" rel="external">https://desktop.github.com/</a></p>
-<h2 id="2-_u5B89_u88C5hexo"><a href="#2-_u5B89_u88C5hexo" class="headerlink" title="2.安装hexo"></a>2.安装hexo</h2><p>(1)打开git 输入</p>
-<pre><code>$ npm install -g hexo
-</code></pre><p>(2)在任意路径新建blog文件夹，并用git进入该文件夹</p>
-<p>(3)在该文件夹下输入</p>
-<pre><code>$ npm install
-
-$ hexo g
-
-$ hexo s
-</code></pre><p>(4)安装成功，在浏览器输入 localhost:4000 查看效果</p>
-<h2 id="3-github_u642D_u5EFA_u9879_u76EE"><a href="#3-github_u642D_u5EFA_u9879_u76EE" class="headerlink" title="3.github搭建项目"></a>3.github搭建项目</h2><p>在github搭建名为username.github.io的项目(username就是github的用户名）</p>
-<h2 id="4-_u521B_u5EFAssh"><a href="#4-_u521B_u5EFAssh" class="headerlink" title="4.创建ssh"></a>4.创建ssh</h2><p>(1)git输入</p>
-<pre><code>$ ssh-keygen -t rsa -C &quot;邮件地址@youremail.com&quot;
-</code></pre><p>期间会要求输入password，输入字符不会显示出来，如果输入则每次上传时都会要求输入，不输入则按回车继续</p>
-<p>(2)添加SSH Key到GitHub</p>
-<p>把生成的id_rsa.pub里信息复制到在github的setting里的ssh中</p>
-<p>到个人邮箱确认github发的确认邮件</p>
-<p>(3)ssh连接测试</p>
-<pre><code>git输入 $ ssh -T git@github.com
-</code></pre><p>(4)设置用户信息</p>
-<p>git输入</p>
-<pre><code>$ git config --global user.name &quot;用户名&quot;
-
-$ git config --global user.email  &quot;邮件地址@youremail.com&quot;
-</code></pre><p>成功信息如下：</p>
-<p>Hi cnfeat! You’ve successfully authenticated, but GitHub does not provide shell access.</p>
-<h2 id="5-_u66F4_u6539_config-yml"><a href="#5-_u66F4_u6539_config-yml" class="headerlink" title="5.更改_config.yml"></a>5.更改_config.yml</h2><p>在blog文件夹中找到_config.yml，修改该文件</p>
-<p>在deploy下添加</p>
-<p>type: git<br>repository: <a href="https://github.com/HeGangSZ/HeGangSZ.github.io.git(从自己的github的repository中复制地址）" target="_blank" rel="external">https://github.com/HeGangSZ/HeGangSZ.github.io.git(从自己的github的repository中复制地址）</a><br>branch: master</p>
-<p>冒号后有个空格不要输少了！否则会错误</p>
-<h2 id="6-_u66F4_u65B0_u4E0A_u4F20"><a href="#6-_u66F4_u65B0_u4E0A_u4F20" class="headerlink" title="6.更新上传"></a>6.更新上传</h2><p>在git下输入</p>
-<pre><code>$ npm install hexo-deployer-git --save 
-
-$ hexo g
-
-$ hexo deploy
-</code></pre><p>更新完毕后进入<a href="https://用户名.github.io/即可查看个人博客" target="_blank" rel="external">https://用户名.github.io/即可查看个人博客</a></p>
-<p>以后每次更新用git进入blog目录输入</p>
-<pre><code>$ hexo g
-
-$ hexo deploy
-</code></pre>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
 	</div>
 
-      
+          
 
-      
-      <div class="clearfix"></div>
-    </div>
-    
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
-  
 </article>
-
-
-
-
-
-
-
-
-
   
   
+    </div></section>
+  
+
+    
+
 </div>
       <footer id="footer">
   <div class="outer">
@@ -292,10 +238,10 @@ $ hexo deploy
 		fancybox: true,
 		mathjax: true,
 		animate: true,
-		isHome: true,
+		isHome: false,
 		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false
 	}
