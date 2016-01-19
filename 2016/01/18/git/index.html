@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>git学习记录 | 尘生</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="git学习记录Git是目前世界上最先进的分布式版本控制系统">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git学习记录">
+<meta property="og:url" content="http://yoursite.com/2016/01/18/git/index.html">
+<meta property="og:site_name" content="尘生">
+<meta property="og:description" content="git学习记录Git是目前世界上最先进的分布式版本控制系统">
+<meta property="og:updated_time" content="2016-01-17T16:10:59.437Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="git学习记录">
+<meta name="twitter:description" content="git学习记录Git是目前世界上最先进的分布式版本控制系统">
+  
+    <link rel="alternative" href="/atom.xml" title="尘生" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://7xnve8.com1.z0.glb.clouddn.com/touxiang%20(1).jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">尘生</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">渺渺尘生如云逝，莫恨青春不可追</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/about">关于我</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/HeGangSZ" title="github">github</a>
+					        
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/chen-sheng-43-27" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">QQ:493910728</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">尘生</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://7xnve8.com1.z0.glb.clouddn.com/touxiang%20(1).jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">尘生</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">渺渺尘生如云逝，莫恨青春不可追</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/about">关于我</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/HeGangSZ" title="github">github</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/chen-sheng-43-27" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-git" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/01/18/git/" class="article-date">
+  	<time datetime="2016-01-17T16:06:22.000Z" itemprop="datePublished">2016-01-18</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      git学习记录
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="git_u5B66_u4E60_u8BB0_u5F55"><a href="#git_u5B66_u4E60_u8BB0_u5F55" class="headerlink" title="git学习记录"></a>git学习记录</h1><p>Git是目前世界上最先进的分布式版本控制系统</p>
+<a id="more"></a>
+<p>生成新文件夹，用命令行进入该文件夹</p>
+<h2 id="u751F_u6210_u65B0_u7684_u4ED3_u5E93"><a href="#u751F_u6210_u65B0_u7684_u4ED3_u5E93" class="headerlink" title="生成新的仓库"></a>生成新的仓库</h2><pre><code>$ git init
+
+//生成新的仓库，会生成一个.git文件夹，用于版本控制
+</code></pre><h2 id="u6DFB_u52A0_u6587_u4EF6_u5230_u6682_u5B58_u533A"><a href="#u6DFB_u52A0_u6587_u4EF6_u5230_u6682_u5B58_u533A" class="headerlink" title="添加文件到暂存区"></a>添加文件到暂存区</h2><pre><code>$ git add &lt;file&gt;
+
+$ git add -A  //添加所有文件
+
+//添加文件到暂存区
+</code></pre><h2 id="u63D0_u4EA4_u6587_u4EF6"><a href="#u63D0_u4EA4_u6587_u4EF6" class="headerlink" title="提交文件"></a>提交文件</h2><pre><code>$ git commit -m &quot;description&quot;
+
+//&quot;&quot;里面是对提交的描述，提交会将暂存区的文件全部提交上去
+
+没有加入暂存区的更改不会被提交，所以每次commit都要先add
+</code></pre><h2 id="u67E5_u770B_u63D0_u4EA4_u72B6_u6001"><a href="#u67E5_u770B_u63D0_u4EA4_u72B6_u6001" class="headerlink" title="查看提交状态"></a>查看提交状态</h2><pre><code>$ git status
+</code></pre><p>所有文件都已被提交，没有更改</p>
+<pre><code>//所有文件都已被提交，没有更改
+On branch master
+nothing to commit, working directory clean
+</code></pre><p>test.test修改了但是没提交</p>
+<pre><code>//test.test修改了但是没提交
+On branch master
+Changes not staged for commit:
+  (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
+  (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)
+
+        modified:   test.txt
+
+no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)
+</code></pre><p>two.txt没有add到repository</p>
+<pre><code>//two.txt没有add到repository
+Untracked files:
+  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)
+
+        two.txt
+</code></pre><h2 id="u67E5_u770B_u4FEE_u6539_u5185_u5BB9"><a href="#u67E5_u770B_u4FEE_u6539_u5185_u5BB9" class="headerlink" title="查看修改内容"></a>查看修改内容</h2><pre><code>$ git diff
+</code></pre><h2 id="u67E5_u770B_u5386_u53F2_u8BB0_u5F55"><a href="#u67E5_u770B_u5386_u53F2_u8BB0_u5F55" class="headerlink" title="查看历史记录"></a>查看历史记录</h2><pre><code>$ git log
+
+//结果从上到下是从新到旧的提交版本
+//后加--pretty=oneline参数简化输出内容
+//commit后面一串是版本号，可用于版本回退
+//gitlog太长用q退出
+</code></pre><h2 id="u67E5_u770B_u547D_u4EE4_u5386_u53F2"><a href="#u67E5_u770B_u547D_u4EE4_u5386_u53F2" class="headerlink" title="查看命令历史"></a>查看命令历史</h2><pre><code>$ git reflog
+//如果已经回退到之前版本无法知道新版本的版本号，可通过这条命令查看
+</code></pre><h2 id="u7248_u672C_u56DE_u9000"><a href="#u7248_u672C_u56DE_u9000" class="headerlink" title="版本回退"></a>版本回退</h2><pre><code>//版本回退会将repository和工作区的版本都回退
+//版本回退会使暂存区和工作区的版本同时回退
+
+$ git reset --hard HEAD^
+//HEAD表示当前版本
+//回退到上一个版本（现版本的倒数第二个版本）
+
+$ git reset --hard HEAD^^
+//回退到现版本的倒数第三个版本
+
+$ git reset --hard HEAD~100
+//回退到现版本的倒数第101个版本
+
+$ git reset --hard 3628164
+//回退到版本号前面数字为3628164的版本，版本号查看git log可见
+
+$ git reset HEAD readme.txt    
+//已将修改add到暂存区，此命令撤销暂存区的修改
+</code></pre><h2 id="u64A4_u9500_u4FEE_u6539"><a href="#u64A4_u9500_u4FEE_u6539" class="headerlink" title="撤销修改"></a>撤销修改</h2><pre><code>$ git checkout -- readme.txt
+
+//如果readme.txt未add到暂存区，则工作区撤销修改到最新版本的内容
+//如果readme.txt已add到暂存区，则工作区撤销修改到添加到暂存区后的状态
+//如果工作区的文件误删，可以用此命令恢复到最新版本
+
+$ git reset HEAD readme.txt
+
+//已将修改add到暂存区，此命令撤销暂存区的修改
+</code></pre><p>本地修改未add到暂存区，则用git checkout – test.txt </p>
+<p>本地修改add到暂存区了，git checkout – test.txt恢复的是暂存区的状态</p>
+<p>add到暂存区但没提交，暂存区状态可用git reset HEAD test.txt恢复到上一次提交的版本库的状态</p>
+<p>所以add后想恢复则先用git reset HEAD test.txt将暂存区状态恢复到版本库状态，再用git checkout – test.txt 将工作区状态恢复到暂存区状态：版本库——暂存区——工作区，恢复顺序和提交顺序相反</p>
+<h2 id="u5220_u9664_u6587_u4EF6"><a href="#u5220_u9664_u6587_u4EF6" class="headerlink" title="删除文件"></a>删除文件</h2><pre><code>$ rm readme.txt     //从工作区删除
+$ git rm -- readme.txt  //从暂存区删除
+$ git commit -m &quot;rmReadMe&quot;   //从版本库里删除
+
+//从版本库中删去readme.txt
+//同理
+（1）如果本地误删但未add到暂存区，可用git checkout -- readme.txt从暂存区恢复到本地；
+（2）如果add到暂存区了，先git reset HEAD test.txt再git checkout -- test.txt；
+（3）如果最后提交了，则先git reset --hard HEAD^回退版本再进行第二步操作
+</code></pre><h2 id="u521B_u5EFA_u5206_u652F"><a href="#u521B_u5EFA_u5206_u652F" class="headerlink" title="创建分支"></a>创建分支</h2><pre><code>//创建dev分支，然后切换到dev分支：
+
+$ git checkout -b dev
+Switched to a new branch &apos;dev&apos;
+
+//git checkout命令加上-b参数表示创建并切换，相当于以下两条命令：
+$ git branch dev  //创建分支
+$ git checkout dev  //切换分支
+Switched to branch &apos;dev&apos;
+</code></pre><h2 id="u67E5_u770B_u5206_u652F"><a href="#u67E5_u770B_u5206_u652F" class="headerlink" title="查看分支"></a>查看分支</h2><pre><code>$ git branch
+//查看分支
+</code></pre><h2 id="u5408_u5E76_u5206_u652F"><a href="#u5408_u5E76_u5206_u652F" class="headerlink" title="合并分支"></a>合并分支</h2><pre><code>$ git merge dev
+//合并dev分支到当前分支（必须切换到需要合并的主分支将次分支合并金主分支里）
+
+$ git merge --no-ff dev
+//使用--no-ff参数可以禁用Fast forward模式来合并分支，这样后续可以查看分支合并的信息
+
+$ git log --graph --pretty=oneline --abbrev-commit
+//用这个命令可以看到分支合并的信息
+</code></pre><h2 id="u5220_u9664_u5206_u652F"><a href="#u5220_u9664_u5206_u652F" class="headerlink" title="删除分支"></a>删除分支</h2><pre><code>$ git branch -d &lt;name&gt;
+删除分支
+
+$ git branch -D &lt;name&gt;
+强行删除一个没有合并过的分支
+</code></pre><h2 id="u4FDD_u5B58_u72B6_u6001"><a href="#u4FDD_u5B58_u72B6_u6001" class="headerlink" title="保存状态"></a>保存状态</h2><pre><code>$ git stash
+//保存未提交的工作状态
+
+$ git stash pop   //恢复后删除stash
+$ git stash apply  //恢复后不删除stash，需用git stash drop删除
+//恢复工作状态 
+
+$ git stash list
+//查看保存工作状态的位置
+
+
+
+$ git stash apply stash@{0}
+//恢复指定工作状态
+
+//当分支中的修改和另一分支有冲突时，没有提交是不能checkout到另一分支的，如果此时有需要创建新分支修改bug，则可以用$ git status命令来保存状态，再使用git stash pop恢复
+//也可多次git stash这样就有多个保存位置，这时用git stash apply stash@{0}恢复指定工作状态
+</code></pre><h2 id="u521B_u5EFA_u6807_u7B7E"><a href="#u521B_u5EFA_u6807_u7B7E" class="headerlink" title="创建标签"></a>创建标签</h2><pre><code>$ git tag v1.0
+//给某版本创建版本标签
+
+git show &lt;tagname&gt;
+//显示标签名
+
+$ git tag
+//查看所有标签
+</code></pre><h1 id="github"><a href="#github" class="headerlink" title="github"></a>github</h1><h2 id="u521B_u5EFA_u4E00_u4E2A_u65B0_u7248_u672C_u5E93"><a href="#u521B_u5EFA_u4E00_u4E2A_u65B0_u7248_u672C_u5E93" class="headerlink" title="创建一个新版本库"></a>创建一个新版本库</h2><pre><code>create a new repository on the command line
+
+echo &quot;# learngit&quot; &gt;&gt; README.md
+git init
+git add README.md
+git commit -m &quot;first commit&quot;
+git remote add origin https://github.com/HeGangSZ/learngit.git
+git push -u origin master
+</code></pre><p>如果git push -u origin master遇到443错误则再次尝试提交</p>
+<h2 id="u5C06_u4E00_u4E2A_u672C_u5730_u7248_u672C_u5E93_u4E0A_u4F20_u5230github"><a href="#u5C06_u4E00_u4E2A_u672C_u5730_u7248_u672C_u5E93_u4E0A_u4F20_u5230github" class="headerlink" title="将一个本地版本库上传到github"></a>将一个本地版本库上传到github</h2><pre><code>push an existing repository from the command line
+
+git remote add origin https://github.com/HeGangSZ/learngit.git
+git push -u origin master
+//将内容提交到master分支，提交到其他分支要改master为其他分支名，以后提交到github输入git push origin master
+
+
+//提交前要先添加SSH
+//添加SSH
+
+(1)git输入
+
+    $ ssh-keygen -t rsa -C &quot;邮件地址@youremail.com&quot;
+
+期间会要求输入password，输入字符不会显示出来，如果输入则每次上传时都会要求输入，不输入则按回车继续
+
+(2)添加SSH Key到GitHub
+
+把生成的id_rsa.pub里信息复制到在github的setting里的ssh中
+
+到个人邮箱确认github发的确认邮件
+
+(3)ssh连接测试
+
+    git输入 $ ssh -T git@github.com
+
+(4)设置用户信息
+
+git输入
+
+    $ git config --global user.name &quot;用户名&quot;
+
+    $ git config --global user.email  &quot;邮件地址@youremail.com&quot;
+
+成功信息如下：
+
+Hi cnfeat! You&apos;ve successfully authenticated, but GitHub does not provide shell access.
+</code></pre><h2 id="u4ECEgithub_u4E0A_u514B_u9686_u4E00_u4E2A_u9879_u76EE"><a href="#u4ECEgithub_u4E0A_u514B_u9686_u4E00_u4E2A_u9879_u76EE" class="headerlink" title="从github上克隆一个项目"></a>从github上克隆一个项目</h2><p>从github项目中获取项目地址(ssh或https）</p>
+<pre><code>git clone git@github.com:HeGangSZ/HGife.git
+
+git clone https://github.com/HeGangSZ/HGife.git
+</code></pre>
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/01/19/DomPosition/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          DOM元素的位置
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/01/13/hexo/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">hexo搭建个人博客</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 尘生
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

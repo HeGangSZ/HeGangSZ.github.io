@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>DOM元素的位置 | 尘生</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="DOM元素的位置参考页面http://www.ruanyifeng.com/blog/2009/09/find_element_s_position_using_javascript.html
+http://www.cnblogs.com/dolphinX/archive/2012/11/19/2777756.html
+http://www.cnblogs.com/myzhibie/p/42561">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DOM元素的位置">
+<meta property="og:url" content="http://yoursite.com/2016/01/19/DomPosition/index.html">
+<meta property="og:site_name" content="尘生">
+<meta property="og:description" content="DOM元素的位置参考页面http://www.ruanyifeng.com/blog/2009/09/find_element_s_position_using_javascript.html
+http://www.cnblogs.com/dolphinX/archive/2012/11/19/2777756.html
+http://www.cnblogs.com/myzhibie/p/42561">
+<meta property="og:image" content="http://images.cnblogs.com/cnblogs_com/dolphinX/201211/201211191754284481.png">
+<meta property="og:image" content="http://i260.photobucket.com/albums/ii7/ruanyf/blog/bg2009091402.gif">
+<meta property="og:image" content="http://i260.photobucket.com/albums/ii7/ruanyf/blog/bg2009091403.gif">
+<meta property="og:updated_time" content="2016-01-19T11:54:46.136Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="DOM元素的位置">
+<meta name="twitter:description" content="DOM元素的位置参考页面http://www.ruanyifeng.com/blog/2009/09/find_element_s_position_using_javascript.html
+http://www.cnblogs.com/dolphinX/archive/2012/11/19/2777756.html
+http://www.cnblogs.com/myzhibie/p/42561">
+  
+    <link rel="alternative" href="/atom.xml" title="尘生" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://7xnve8.com1.z0.glb.clouddn.com/touxiang%20(1).jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">尘生</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">渺渺尘生如云逝，莫恨青春不可追</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/about">关于我</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/HeGangSZ" title="github">github</a>
+					        
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/chen-sheng-43-27" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">QQ:493910728</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">尘生</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://7xnve8.com1.z0.glb.clouddn.com/touxiang%20(1).jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">尘生</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">渺渺尘生如云逝，莫恨青春不可追</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/about">关于我</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/HeGangSZ" title="github">github</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/chen-sheng-43-27" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-DomPosition" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/01/19/DomPosition/" class="article-date">
+  	<time datetime="2016-01-19T11:52:33.000Z" itemprop="datePublished">2016-01-19</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      DOM元素的位置
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DOM/">DOM</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="DOM_u5143_u7D20_u7684_u4F4D_u7F6E"><a href="#DOM_u5143_u7D20_u7684_u4F4D_u7F6E" class="headerlink" title="DOM元素的位置"></a>DOM元素的位置</h1><h1 id="u53C2_u8003_u9875_u9762"><a href="#u53C2_u8003_u9875_u9762" class="headerlink" title="参考页面"></a>参考页面</h1><p><a href="http://www.ruanyifeng.com/blog/2009/09/find_element_s_position_using_javascript.html" title="用Javascript获取页面元素的位置" target="_blank" rel="external">http://www.ruanyifeng.com/blog/2009/09/find_element_s_position_using_javascript.html</a></p>
+<p><a href="http://www.cnblogs.com/dolphinX/archive/2012/11/19/2777756.html" title="JavaScript获取DOM元素位置和尺寸大小" target="_blank" rel="external">http://www.cnblogs.com/dolphinX/archive/2012/11/19/2777756.html</a></p>
+<p><a href="http://www.cnblogs.com/myzhibie/p/4256164.html?utm_source=tuicool" title="js中的各种宽高以及位置总结" target="_blank" rel="external">http://www.cnblogs.com/myzhibie/p/4256164.html?utm_source=tuicool</a></p>
+<a id="more"></a>
+<p><img src="http://images.cnblogs.com/cnblogs_com/dolphinX/201211/201211191754284481.png" alt=""></p>
+<p><strong>clientWidth = 220px</strong></p>
+<p><strong>clientLeft = 3px</strong></p>
+<p><strong>offsetWidth = 226px</strong></p>
+<p><strong>offsetLeft = 38px</strong></p>
+<h2 id="clientHeight_u548CclientWidth_u5C5E_u6027"><a href="#clientHeight_u548CclientWidth_u5C5E_u6027" class="headerlink" title="clientHeight和clientWidth属性"></a>clientHeight和clientWidth属性</h2><p>clientHeight和clientWidth返回的是content+padding的宽度</p>
+<p>该属性指的是元素的可视部分宽度和高度，即content+padding，如果没有滚动条，即为元素设定的高度和宽度，如果出现滚动条，滚动条会遮盖元素的宽高，那么该属性就是其本来宽高减去滚动条的宽高</p>
+<p><img src="http://i260.photobucket.com/albums/ii7/ruanyf/blog/bg2009091402.gif" alt=""></p>
+<p>document元素的clientHeight和clientWidth属性，就代表了网页的大小。</p>
+<pre><code>　　function getViewport(){
+　　　　if (document.compatMode == &quot;BackCompat&quot;){
+　　　　　　return {
+　　　　　　　　width: document.body.clientWidth,
+　　　　　　　　height: document.body.clientHeight
+　　　　　　}
+　　　　} else {
+　　　　　　return {
+　　　　　　　　width: document.documentElement.clientWidth,
+　　　　　　　　height: document.documentElement.clientHeight
+　　　　　　}
+　　　　}
+　　}
+上面的getViewport函数就可以返回浏览器窗口的高和宽。
+</code></pre><p>1）这个函数必须在页面加载完成后才能运行，否则document对象还没生成，浏览器会报错。</p>
+<p>2）大多数情况下，都是document.documentElement.clientWidth返回正确值。但是，在IE6的quirks模式中，document.body.clientWidth返回正确的值，因此函数中加入了对文档模式的判断。</p>
+<p>3）clientWidth和clientHeight都是只读属性，不能对它们赋值。</p>
+<h2 id="clientTop_u548CclientLeft_u5C5E_u6027"><a href="#clientTop_u548CclientLeft_u5C5E_u6027" class="headerlink" title="clientTop和clientLeft属性"></a>clientTop和clientLeft属性</h2><p>clientTop和clientLeft返回的是border的宽度</p>
+<h2 id="offsetHeight_u548C_offsetWidth_u5C5E_u6027"><a href="#offsetHeight_u548C_offsetWidth_u5C5E_u6027" class="headerlink" title="offsetHeight和 offsetWidth属性"></a>offsetHeight和 offsetWidth属性</h2><p>content+padding+border的宽度</p>
+<p><img src="http://i260.photobucket.com/albums/ii7/ruanyf/blog/bg2009091403.gif" alt=""></p>
+<h2 id="offsetLeft_u548C_offsetTop_u5C5E_u6027"><a href="#offsetLeft_u548C_offsetTop_u5C5E_u6027" class="headerlink" title="offsetLeft和 offsetTop属性"></a>offsetLeft和 offsetTop属性</h2><p>offsetLeft和 offsetTop返回的是该元素border边缘相对于<strong>已定位的</strong>offsetParent对象左上角的距离</p>
+<p>offsetParent是指包裹该元素的父级元素，父级元素需定位，如无offsetParent，则相对的是文档的左上角</p>
+<h2 id="scrollWidth_u548CscrollHeight_u5C5E_u6027"><a href="#scrollWidth_u548CscrollHeight_u5C5E_u6027" class="headerlink" title="scrollWidth和scrollHeight属性"></a>scrollWidth和scrollHeight属性</h2><p>scrollWidth和scrollHeight返回的是该元素content+padding加上溢出尺寸(溢出尺寸即超出包裹div尺寸，滚动条以外的尺寸）</p>
+<pre><code>上面属性都不可写
+clientHeight和clientWidth
+clientTop和clientLeft
+offsetHeight和offsetWidth
+offsetLeft和offsetTop
+scrollWidth和scrollHeight
+</code></pre><h2 id="scrollLeft_u548CscrollTop_u5C5E_u6027"><a href="#scrollLeft_u548CscrollTop_u5C5E_u6027" class="headerlink" title="scrollLeft和scrollTop属性"></a>scrollLeft和scrollTop属性</h2><p>scrollLeft和scrollTop指的是当元素其中的内容超出其宽高的时候，元素被滚动卷起的高度和宽度。</p>
+<p>此属性可写，改变后自动滚动到该位置</p>
+<h2 id="u76F8_u5BF9_u5750_u6807_u548C_u7EDD_u5BF9_u5750_u6807"><a href="#u76F8_u5BF9_u5750_u6807_u548C_u7EDD_u5BF9_u5750_u6807" class="headerlink" title="相对坐标和绝对坐标"></a>相对坐标和绝对坐标</h2><p>相对坐标是指到浏览器窗口左上角的距离，绝对坐标是指到文档左上角的距离。</p>
+<p>getBoundingClientRect()方法是获取该元素的相对坐标，后加top和<br>left属性可得到相应坐标</p>
+<h3 id="u7EDD_u5BF9_u5750_u6807_u7684_u8BA1_u7B97_u6709_u4E24_u79CD_u65B9_u6CD5"><a href="#u7EDD_u5BF9_u5750_u6807_u7684_u8BA1_u7B97_u6709_u4E24_u79CD_u65B9_u6CD5" class="headerlink" title="绝对坐标的计算有两种方法"></a>绝对坐标的计算有两种方法</h3><p>（1）可以根据offsetLeft和 offsetTop属性获取元素的绝对定位，即元素到文档左上角的距离，将该元素的offsetLeft和所有父级元素的offsetLeft累加可得，函数如下</p>
+<pre><code>/**
+ * 获取元素绝对定位left
+ *
+ * @param  {Object} element 元素节点
+ * @return {Number}  actualLeft 元素节点相对于文档的绝对left位置
+ */
+function getElementLeft(element){
+    var actualLeft = element.offsetLeft;
+    var current = element.offsetParent;
+    while (current !== null){
+        actualLeft += current.offsetLeft;
+        current = current.offsetParent;
+    }
+    return actualLeft;
+}
+</code></pre><p>（2）可以用相对坐标加文档卷起的宽度得到绝对定位</p>
+<pre><code>function y(e){
+    alert(this.getBoundingClientRect()+document.documentElement.scrollTop)
+}
+
+//如果document.documentElement.scrollTop不起作用，始终为0，则将其改为document.body.scrollTop
+</code></pre><h3 id="u76F8_u5BF9_u5750_u6807_u7684_u8BA1_u7B97_u4E5F_u6709_u4E24_u79CD_u65B9_u6CD5"><a href="#u76F8_u5BF9_u5750_u6807_u7684_u8BA1_u7B97_u4E5F_u6709_u4E24_u79CD_u65B9_u6CD5" class="headerlink" title="相对坐标的计算也有两种方法"></a>相对坐标的计算也有两种方法</h3><p>（1）直接用getBoundingClientRect()方法可得</p>
+<p>（2）用绝对坐标减去卷起宽度</p>
+<pre><code>function z(e){
+    alert(getElementTop(this)-document.body.scrollTop)
+}
+</code></pre><h1 id="Event_u5BF9_u8C61"><a href="#Event_u5BF9_u8C61" class="headerlink" title="Event对象"></a>Event对象</h1><h2 id="clientX_u548CclientY"><a href="#clientX_u548CclientY" class="headerlink" title="clientX和clientY"></a>clientX和clientY</h2><p>这对属性是当事件发生时，鼠标点击位置相对于浏览器（可视区）的坐标，即浏览器左上角坐标的（0,0），该属性以浏览器左上角坐标为原点，计算鼠标点击位置距离其左上角的位置.不管浏览器窗口大小如何变化，都不会影响点击位置的坐标。</p>
+<h2 id="offsetX_u548CoffsetY"><a href="#offsetX_u548CoffsetY" class="headerlink" title="offsetX和offsetY"></a>offsetX和offsetY</h2><p>这一对属性是指当事件发生时，鼠标点击位置相对于该事件源的位置，即点击该div，以该div左上角为原点来计算鼠标点击位置的坐标</p>
+<h2 id="screenX_u548CscreenY"><a href="#screenX_u548CscreenY" class="headerlink" title="screenX和screenY"></a>screenX和screenY</h2><p>screenX和screenY是事件发生时鼠标相对于屏幕的坐标<br>点击浏览器视窗内的同一点，浏览器在屏幕里改变位置，该点位置就会改变</p>
+<h2 id="pageX_u548CpageY"><a href="#pageX_u548CpageY" class="headerlink" title="pageX和pageY"></a>pageX和pageY</h2><p>该属性是事件发生时鼠标点击位置相对于页面的位置，通常浏览器窗口没有出现滚动条时，该属性和event.clientX及event.clientY是等价的，但是当浏览器出现滚动条的时候，pageX通常会大于clientX，因为页面还存在被卷起来的部分的宽度和高度</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/01/18/git/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">git学习记录</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 尘生
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
