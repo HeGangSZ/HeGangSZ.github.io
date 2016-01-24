@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>关于JS中的prototype | 尘生</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="原型继承JS中的一切皆为对象，而每个对象中都有一个prototype属性，称为原型对象。
+在创建构造函数时，使用构造函数创建的对象也有一个原型对象，这个原型对象指向构造函数的原型对象，当调用创建对象的方法时，先查找自身，如果没有，则从自身原型对象里查找，还没有，就从构造函数的原型对象中查找，还没有就继续向上查找。这就叫做原型继承。而原型之间逐级向上的关系则称为原型链">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于JS中的prototype">
+<meta property="og:url" content="http://yoursite.com/2016/01/24/prototype/index.html">
+<meta property="og:site_name" content="尘生">
+<meta property="og:description" content="原型继承JS中的一切皆为对象，而每个对象中都有一个prototype属性，称为原型对象。
+在创建构造函数时，使用构造函数创建的对象也有一个原型对象，这个原型对象指向构造函数的原型对象，当调用创建对象的方法时，先查找自身，如果没有，则从自身原型对象里查找，还没有，就从构造函数的原型对象中查找，还没有就继续向上查找。这就叫做原型继承。而原型之间逐级向上的关系则称为原型链">
+<meta property="og:updated_time" content="2016-01-24T08:18:07.198Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="关于JS中的prototype">
+<meta name="twitter:description" content="原型继承JS中的一切皆为对象，而每个对象中都有一个prototype属性，称为原型对象。
+在创建构造函数时，使用构造函数创建的对象也有一个原型对象，这个原型对象指向构造函数的原型对象，当调用创建对象的方法时，先查找自身，如果没有，则从自身原型对象里查找，还没有，就从构造函数的原型对象中查找，还没有就继续向上查找。这就叫做原型继承。而原型之间逐级向上的关系则称为原型链">
+  
+    <link rel="alternative" href="/atom.xml" title="尘生" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://7xnve8.com1.z0.glb.clouddn.com/touxiang%20(1).jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">尘生</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">渺渺尘生如云逝，莫恨青春不可追</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/about">关于我</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/HeGangSZ" title="github">github</a>
+					        
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/chen-sheng-43-27" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">QQ:493910728</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">尘生</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://7xnve8.com1.z0.glb.clouddn.com/touxiang%20(1).jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">尘生</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">渺渺尘生如云逝，莫恨青春不可追</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/about">关于我</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/HeGangSZ" title="github">github</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/chen-sheng-43-27" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-prototype" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/01/24/prototype/" class="article-date">
+  	<time datetime="2016-01-24T08:13:48.000Z" itemprop="datePublished">2016-01-24</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      关于JS中的prototype
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="u539F_u578B_u7EE7_u627F"><a href="#u539F_u578B_u7EE7_u627F" class="headerlink" title="原型继承"></a>原型继承</h2><p>JS中的一切皆为对象，而每个对象中都有一个prototype属性，称为原型对象。</p>
+<p>在创建构造函数时，使用构造函数创建的对象也有一个原型对象，这个原型对象指向构造函数的原型对象，当调用创建对象的方法时，先查找自身，如果没有，则从自身原型对象里查找，还没有，就从构造函数的原型对象中查找，还没有就继续向上查找。这就叫做原型继承。而原型之间逐级向上的关系则称为原型链</p>
+<a id="more"></a>
+<pre><code>xiaoming ----&gt; Student.prototype ----&gt; Object.prototype ----&gt; null
+</code></pre><p>如果将x方法加到构造函数prototype里，则所有创建的新对象所使用的x方法都是同一个。<br>如果不加到构造函数prototype中，而直接在构造函数中定义x方法，则每个创建的新对象都会创建一个x方法，相互之间的x方法是不同的</p>
+<pre><code>//创建一个构造函数，并在其原型添加方法
+function Test(name,age){
+    this.name = name;   //构造函数需要先将属性传进来赋予给this，this指向新创建的对象
+    this.age = age;
+}     //调用属性时先调用自身属性，如没有则从原型上找，还没有就顺着原型链继续往上找该属性
+Test.prototype={   //prototype指的是构造器的原型对象，通过构造函数创建的对象共用来自这个原型对象的方法和属性
+    hello:function(){
+        alert(&quot;hello&quot;+this.name+&quot;,your age is&quot;+this.age)
+    }
+};
+</code></pre><p>ES5中Object.creat()方法</p>
+<p>var bill = Object.creat(teacher)相当于直接将teacher作为构造函数创建一个bill对象</p>
+<h2 id="Class_u7EE7_u627F"><a href="#Class_u7EE7_u627F" class="headerlink" title="Class继承"></a>Class继承</h2><p>如果需要将一个构造函数进行扩展，创建一个新的构造函数，这在别的语言中相当于类的继承，而在JS中没有类的概念，所以我们要通过原型继承来实现这一功能</p>
+<p>ClassA为父类，现需创建ClassB为子类</p>
+<p>(1)</p>
+<pre><code>function ClassB(){
+
+    ClassA.apply(this)
+}
+//首先调用ClassA的方法，使this指向ClassB，此时ClassB可以调用ClassA的方法，但原型链没有继承过来，而不能调用ClassA原型中的方法；
+</code></pre><p>(2)</p>
+<pre><code>function F（）{}
+//创建一个空函数来桥接原型链
+</code></pre><p>(3)</p>
+<pre><code>F.prototype = ClassA.prototype 
+//使ClassA的原型赋给F的原型，这样F和ClassA的原型和原型链是一样的
+</code></pre><p>(4)</p>
+<pre><code>ClassB.prototype = new F()
+//创建一个新的F对象来赋给ClassB.prototype，而F对象的原型又是ClassA的原型，则此时ClassB.prototype指向ClassA.prototype，则ClassB可以调用ClassA原型中的方法
+
+ClassB.prototype  ----&gt; ClassA.prototype 
+
+此时在ClassB.prototype中增加属性相当于在F对象增加属性，并不会影响到ClassA.prototype
+</code></pre><p>(5)</p>
+<pre><code>ClassB.prototype.constructor = ClassB
+//在上一步中使ClassB.prototype.constructor指向了F()，这里进行恢复
+</code></pre><p>下面将这一步骤进行封装</p>
+<pre><code>function inherits(Child, Parent) {
+    var F = function () {};
+    F.prototype = Parent.prototype;
+    Child.prototype = new F();
+    Child.prototype.constructor = Child;
+}
+</code></pre><p>这个inherits()函数可以复用：</p>
+<pre><code>function Student(props) {
+    this.name = props.name || &apos;Unnamed&apos;;
+}
+
+Student.prototype.hello = function () {
+    alert(&apos;Hello, &apos; + this.name + &apos;!&apos;);
+}
+
+function PrimaryStudent(props) {
+    Student.call(this, props);
+    this.grade = props.grade || 1;
+}
+
+// 实现原型继承链:
+inherits(PrimaryStudent, Student);
+
+// 绑定其他方法到PrimaryStudent原型:
+PrimaryStudent.prototype.getGrade = function () {
+    return this.grade;
+};
+</code></pre><p>参考资料：<br><a href="http://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/0014344997013405abfb7f0e1904a04ba6898a384b1e925000" target="_blank" rel="external">http://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/0014344997013405abfb7f0e1904a04ba6898a384b1e925000</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/01/19/DomPosition/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">DOM元素的位置</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 尘生
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
