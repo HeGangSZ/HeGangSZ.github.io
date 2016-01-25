@@ -4,17 +4,19 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Archives: 2016 | 尘生</title>
+  <title>js_bibao | 尘生</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="尘生">
-<meta property="og:type" content="website">
-<meta property="og:title" content="尘生">
-<meta property="og:url" content="http://yoursite.com/archives/2016/index.html">
+  <meta name="description" content="闭包就是函数局部变量的集合，但这些局部变量在函数返回后还会继续存在。简单来说，闭包就是在另一个作用域中保存了一份它从上一级函数或作用域取得的变量（键值对），而这些键值对是不会随上一级函数的执行完成而销毁。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js_bibao">
+<meta property="og:url" content="http://yoursite.com/2016/01/25/js-bibao/index.html">
 <meta property="og:site_name" content="尘生">
-<meta property="og:description" content="尘生">
+<meta property="og:description" content="闭包就是函数局部变量的集合，但这些局部变量在函数返回后还会继续存在。简单来说，闭包就是在另一个作用域中保存了一份它从上一级函数或作用域取得的变量（键值对），而这些键值对是不会随上一级函数的执行完成而销毁。">
+<meta property="og:image" content="http://files.jb51.net/upload/20090527123259659.jpg">
+<meta property="og:updated_time" content="2016-01-25T08:20:43.132Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="尘生">
-<meta name="twitter:description" content="尘生">
+<meta name="twitter:title" content="js_bibao">
+<meta name="twitter:description" content="闭包就是函数局部变量的集合，但这些局部变量在函数返回后还会继续存在。简单来说，闭包就是在另一个作用域中保存了一份它从上一级函数或作用域取得的变量（键值对），而这些键值对是不会随上一级函数的执行完成而销毁。">
   
     <link rel="alternative" href="/atom.xml" title="尘生" type="application/atom+xml">
   
@@ -171,208 +173,101 @@
 	</div>
 </nav>
 
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-js-bibao" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/01/25/js-bibao/" class="archive-article-date">
-  	<time datetime="2016-01-25T08:19:51.000Z" itemprop="datePublished">Jan 25</time>
+    <div class="article-meta">
+      <a href="/2016/01/25/js-bibao/" class="article-date">
+  	<time datetime="2016-01-25T08:19:51.000Z" itemprop="datePublished">2016-01-25</time>
 </a>
-        </div>
-    	 
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/25/js-bibao/">js_bibao</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      js_bibao
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
 	<div class="article-tag tagcloud">
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS中的闭包/">JS中的闭包</a></li></ul>
 	</div>
 
-          
+        
 
-        </div>
         <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
+      </div>
+      
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/01/25/js-zuoyongyu/" class="archive-article-date">
-  	<time datetime="2016-01-25T08:18:10.000Z" itemprop="datePublished">Jan 25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/25/js-zuoyongyu/">js_zuoyongyu</a>
-    </h1>
-  
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>闭包就是函数局部变量的集合，但这些局部变量在函数返回后还会继续存在。简单来说，闭包就是在另一个作用域中保存了一份它从上一级函数或作用域取得的变量（键值对），而这些键值对是不会随上一级函数的执行完成而销毁。</p>
+<a id="more"></a>
+<p>在一个函数内定义另一个函数就会产生闭包。</p>
+<p>我们可以利用闭包来实现对函数内局部变量结果的保存</p>
+<p>当函数a的内部函数b被函数a外的一个变量引用的时候，就创建了一个我们通常所谓的“闭包”。</p>
+<p><img src="http://files.jb51.net/upload/20090527123259659.jpg" alt=""></p>
+<p>在上面的例子中，由于闭包的存在使得函数a返回后，a中的i始终存在，这样每次执行c()，i都是自加1后alert出i的值。</p>
+<h2 id="u95ED_u5305_u7684_u5E94_u7528_u573A_u666F"><a href="#u95ED_u5305_u7684_u5E94_u7528_u573A_u666F" class="headerlink" title="闭包的应用场景"></a>闭包的应用场景</h2><p>1.保护函数内的变量安全。以最开始的例子为例，函数a中i只有函数b才能访问，而无法通过其他途径访问到，因此保护了i的安全性。</p>
+<p>2.在内存中维持一个变量。依然如前例，由于闭包，函数a中i的一直存在于内存中，因此每次执行c()，都会给i自加1。</p>
+<p>3.通过保护变量的安全实现JS私有属性和私有方法（不能被外部访问）推荐阅读：<a href="http://javascript.crockford.com/private.html" target="_blank" rel="external">http://javascript.crockford.com/private.html</a></p>
+<p>私有属性和方法在Constructor外是无法被访问的</p>
+<p>参考资料：</p>
+<p><a href="http://www.jb51.net/article/18303.htm" target="_blank" rel="external">http://www.jb51.net/article/18303.htm</a><br><a href="http://www.cnblogs.com/rubylouvre/archive/2009/07/24/1530074.html" target="_blank" rel="external">http://www.cnblogs.com/rubylouvre/archive/2009/07/24/1530074.html</a><br><a href="http://www.ruanyifeng.com/blog/2009/08/learning_javascript_closures.html" target="_blank" rel="external">http://www.ruanyifeng.com/blog/2009/08/learning_javascript_closures.html</a></p>
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS中的作用域链/">JS中的作用域链</a></li></ul>
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/01/25/js-zuoyongyu/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">js_zuoyongyu</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
 	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/01/24/prototype/" class="archive-article-date">
-  	<time datetime="2016-01-24T08:13:48.000Z" itemprop="datePublished">Jan 24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/24/prototype/">关于JS中的prototype</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
-	</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/01/19/DomPosition/" class="archive-article-date">
-  	<time datetime="2016-01-19T11:52:33.000Z" itemprop="datePublished">Jan 19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/19/DomPosition/">DOM元素的位置</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DOM/">DOM</a></li></ul>
-	</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/01/18/git/" class="archive-article-date">
-  	<time datetime="2016-01-17T16:06:22.000Z" itemprop="datePublished">Jan 18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/18/git/">git学习记录</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/01/13/hexo/" class="archive-article-date">
-  	<time datetime="2016-01-13T14:54:31.000Z" itemprop="datePublished">Jan 13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/13/hexo/">hexo搭建个人博客</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 </div>
       <footer id="footer">
@@ -398,8 +293,8 @@
 		mathjax: true,
 		animate: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false

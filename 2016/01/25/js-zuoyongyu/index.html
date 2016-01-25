@@ -4,18 +4,21 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>about | 尘生</title>
+  <title>js_zuoyongyu | 尘生</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="联系方式：QQ">
-<meta property="og:type" content="website">
-<meta property="og:title" content="about">
-<meta property="og:url" content="http://yoursite.com/about/index.html">
+  <meta name="description" content="作用域链作用域是变量和函数的可访问范围，即作用域控制着变量和函数的可见性和生命周期。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js_zuoyongyu">
+<meta property="og:url" content="http://yoursite.com/2016/01/25/js-zuoyongyu/index.html">
 <meta property="og:site_name" content="尘生">
-<meta property="og:description" content="联系方式：QQ">
-<meta property="og:updated_time" content="2016-01-16T14:04:06.041Z">
+<meta property="og:description" content="作用域链作用域是变量和函数的可访问范围，即作用域控制着变量和函数的可见性和生命周期。">
+<meta property="og:image" content="http://pic002.cnblogs.com/images/2011/36987/2011090414435366.jpg">
+<meta property="og:image" content="http://pic002.cnblogs.com/images/2011/36987/2011090414444843.jpg">
+<meta property="og:image" content="http://pic002.cnblogs.com/images/2011/36987/2011090414454524.jpg">
+<meta property="og:updated_time" content="2016-01-25T08:19:08.105Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="about">
-<meta name="twitter:description" content="联系方式：QQ">
+<meta name="twitter:title" content="js_zuoyongyu">
+<meta name="twitter:description" content="作用域链作用域是变量和函数的可访问范围，即作用域控制着变量和函数的可见性和生命周期。">
   
     <link rel="alternative" href="/atom.xml" title="尘生" type="application/atom+xml">
   
@@ -172,11 +175,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-js-zuoyongyu" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/about/index.html" class="article-date">
-  	<time datetime="2016-01-16T14:03:32.000Z" itemprop="datePublished">2016-01-16</time>
+      <a href="/2016/01/25/js-zuoyongyu/" class="article-date">
+  	<time datetime="2016-01-25T08:18:10.000Z" itemprop="datePublished">2016-01-25</time>
 </a>
     </div>
   
@@ -189,7 +192,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      about
+      js_zuoyongyu
     </h1>
   
 
@@ -197,6 +200,10 @@
       
       <div class="article-info article-info-post">
         
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS中的作用域链/">JS中的作用域链</a></li></ul>
+	</div>
+
         
 
         <div class="clearfix"></div>
@@ -205,7 +212,29 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>联系方式：<br>QQ</p>
+        <h2 id="u4F5C_u7528_u57DF_u94FE"><a href="#u4F5C_u7528_u57DF_u94FE" class="headerlink" title="作用域链"></a>作用域链</h2><p>作用域是变量和函数的可访问范围，即作用域控制着变量和函数的可见性和生命周期。</p>
+<a id="more"></a>
+<p>JavaScript中的函数运行在它们被定义的作用域里,而不是它们被执行的作用域里.</p>
+<p>变量作用域分为全局作用域和局部作用域，只有函数能够创建局部作用域</p>
+<p>当函数被创建时，它的作用域链中会填入一个全局对象，里面包含了所有全局变量</p>
+<p><img src="http://pic002.cnblogs.com/images/2011/36987/2011090414435366.jpg" alt=""></p>
+<p>当执行该函数时，会创建一个称为“运行期上下文(execution context)”的内部对象，并将函数执行时的环境添加到这个内部对象中，然后将这个内部对象也加到作用域链中</p>
+<p><img src="http://pic002.cnblogs.com/images/2011/36987/2011090414444843.jpg" alt=""></p>
+<p>运行函数时会从前往后检索，直到找到需要的变量</p>
+<h2 id="with_u8BED_u53E5"><a href="#with_u8BED_u53E5" class="headerlink" title="with语句"></a>with语句</h2><p>with语句会将语句内的作用域添加到作用域的最前端，这样减少了代码的书写量，但函数内部的变量便被推到第二位，是的访问代价提高，所以要减少with语句的使用</p>
+<p><img src="http://pic002.cnblogs.com/images/2011/36987/2011090414454524.jpg" alt=""></p>
+<h2 id="try_u2014catch_u8BED_u53E5"><a href="#try_u2014catch_u8BED_u53E5" class="headerlink" title="try—catch语句"></a>try—catch语句</h2><p>try—catch语句里的cathch同样也会临时改变作用域链，一旦catch语句执行完毕，作用域链机会返回到之前的状态。</p>
+<h2 id="ES5_u4E2D_u7684_u8BCD_u6CD5_u73AF_u5883"><a href="#ES5_u4E2D_u7684_u8BCD_u6CD5_u73AF_u5883" class="headerlink" title="ES5中的词法环境"></a>ES5中的词法环境</h2><p>词法环境只是作用域换一个说法，下面是网易前端微专业课程的笔记</p>
+<p>在函数调用前，会初始化词法环境，词法环境的内容包括变量定义，函数定义和形参，然后保存当前词法环境。调用函数时，将刚才保存的词法环境作为外部词法环境，然后再保存函数内部的词法环境，在调用函数时就先从内部词法环境中找，如没有就继续到外部词法环境中找。</p>
+<p>只有函数可以定义词法环境，其他语句不会定义词法环境</p>
+<p>函数定义和函数表达式的词法环境是不同的</p>
+<pre><code>function A(){} //这是函数定义，函数定义的词法环境在定义该函数时就确定了
+
+(function (){})()//这是函数表达式，会立刻执行，函数表达式的词法环境在运行该表达式时才确定
+</code></pre><p>如果使用with语句，会临时改变当前语法环境，将with语句内的词法环境提到最前面。如果是预先定义的函数，调用它的词法环境不会受到影响，因为它的词法环境在定义时确定的。如果是立即执行的函数表达式，没有预先进行定义，那么它的词法环境是在运行时才确定的，如果它在with语句内，那么它的词法环境就是with语句里的词法环境。</p>
+<p>try··catch语句的catch和with一样也会临时改变词法环境，所起作用和with相同</p>
+<p>参考资料：<br><a href="http://www.cnblogs.com/lhb25/archive/2011/09/06/javascript-scope-chain.html" target="_blank" rel="external">http://www.cnblogs.com/lhb25/archive/2011/09/06/javascript-scope-chain.html</a></p>
+<p><a href="http://www.laruence.com/2009/05/28/863.html" target="_blank" rel="external">http://www.laruence.com/2009/05/28/863.html</a></p>
 
       
     </div>
@@ -213,6 +242,25 @@
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/2016/01/25/js-bibao/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          js_bibao
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/01/24/prototype/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">关于JS中的prototype</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
   
 </article>
 
@@ -266,7 +314,7 @@
 		mathjax: true,
 		animate: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
