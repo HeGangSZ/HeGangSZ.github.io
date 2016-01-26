@@ -4,21 +4,30 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>JS中的作用域链 | 尘生</title>
+  <title>DOM中的事件 | 尘生</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="作用域链作用域是变量和函数的可访问范围，即作用域控制着变量和函数的可见性和生命周期。">
+  <meta name="description" content="DOM事件事件流：描述的是从页面接受事件的顺序
+事件冒泡：事件最开始最具体的元素接收，然后逐级向上传播
+事件捕获：不太具体的节点最早接受到事件，最具体的节点最后接收到事件
+HTML事件处理：直接将事件添加到HTML结构中    btn.onclick=”function(){}”
+DOM0级事件处理：把一个函数赋值给一个事件的处理程序属性    btn.event = function(){};">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JS中的作用域链">
-<meta property="og:url" content="http://yoursite.com/2016/01/25/js-zuoyongyu/index.html">
+<meta property="og:title" content="DOM中的事件">
+<meta property="og:url" content="http://yoursite.com/2016/01/26/event/index.html">
 <meta property="og:site_name" content="尘生">
-<meta property="og:description" content="作用域链作用域是变量和函数的可访问范围，即作用域控制着变量和函数的可见性和生命周期。">
-<meta property="og:image" content="http://pic002.cnblogs.com/images/2011/36987/2011090414435366.jpg">
-<meta property="og:image" content="http://pic002.cnblogs.com/images/2011/36987/2011090414444843.jpg">
-<meta property="og:image" content="http://pic002.cnblogs.com/images/2011/36987/2011090414454524.jpg">
-<meta property="og:updated_time" content="2016-01-26T02:22:10.491Z">
+<meta property="og:description" content="DOM事件事件流：描述的是从页面接受事件的顺序
+事件冒泡：事件最开始最具体的元素接收，然后逐级向上传播
+事件捕获：不太具体的节点最早接受到事件，最具体的节点最后接收到事件
+HTML事件处理：直接将事件添加到HTML结构中    btn.onclick=”function(){}”
+DOM0级事件处理：把一个函数赋值给一个事件的处理程序属性    btn.event = function(){};">
+<meta property="og:updated_time" content="2016-01-26T02:54:40.299Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JS中的作用域链">
-<meta name="twitter:description" content="作用域链作用域是变量和函数的可访问范围，即作用域控制着变量和函数的可见性和生命周期。">
+<meta name="twitter:title" content="DOM中的事件">
+<meta name="twitter:description" content="DOM事件事件流：描述的是从页面接受事件的顺序
+事件冒泡：事件最开始最具体的元素接收，然后逐级向上传播
+事件捕获：不太具体的节点最早接受到事件，最具体的节点最后接收到事件
+HTML事件处理：直接将事件添加到HTML结构中    btn.onclick=”function(){}”
+DOM0级事件处理：把一个函数赋值给一个事件的处理程序属性    btn.event = function(){};">
   
     <link rel="alternative" href="/atom.xml" title="尘生" type="application/atom+xml">
   
@@ -175,11 +184,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-js-zuoyongyu" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-event" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/01/25/js-zuoyongyu/" class="article-date">
-  	<time datetime="2016-01-25T08:18:10.000Z" itemprop="datePublished">2016-01-25</time>
+      <a href="/2016/01/26/event/" class="article-date">
+  	<time datetime="2016-01-26T02:24:10.000Z" itemprop="datePublished">2016-01-26</time>
 </a>
     </div>
   
@@ -192,7 +201,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      JS中的作用域链
+      DOM中的事件
     </h1>
   
 
@@ -201,7 +210,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DOM/">DOM</a></li></ul>
 	</div>
 
         
@@ -212,29 +221,54 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="u4F5C_u7528_u57DF_u94FE"><a href="#u4F5C_u7528_u57DF_u94FE" class="headerlink" title="作用域链"></a>作用域链</h2><p>作用域是变量和函数的可访问范围，即作用域控制着变量和函数的可见性和生命周期。</p>
-<a id="more"></a>
-<p>JavaScript中的函数运行在它们被定义的作用域里,而不是它们被执行的作用域里.</p>
-<p>变量作用域分为全局作用域和局部作用域，只有函数能够创建局部作用域</p>
-<p>当函数被创建时，它的作用域链中会填入一个全局对象，里面包含了所有全局变量</p>
-<p><img src="http://pic002.cnblogs.com/images/2011/36987/2011090414435366.jpg" alt=""></p>
-<p>当执行该函数时，会创建一个称为“运行期上下文(execution context)”的内部对象，并将函数执行时的环境添加到这个内部对象中，然后将这个内部对象也加到作用域链中</p>
-<p><img src="http://pic002.cnblogs.com/images/2011/36987/2011090414444843.jpg" alt=""></p>
-<p>运行函数时会从前往后检索，直到找到需要的变量</p>
-<h2 id="with_u8BED_u53E5"><a href="#with_u8BED_u53E5" class="headerlink" title="with语句"></a>with语句</h2><p>with语句会将语句内的作用域添加到作用域的最前端，这样减少了代码的书写量，但函数内部的变量便被推到第二位，是的访问代价提高，所以要减少with语句的使用</p>
-<p><img src="http://pic002.cnblogs.com/images/2011/36987/2011090414454524.jpg" alt=""></p>
-<h2 id="try_u2014catch_u8BED_u53E5"><a href="#try_u2014catch_u8BED_u53E5" class="headerlink" title="try—catch语句"></a>try—catch语句</h2><p>try—catch语句里的catch同样也会临时改变作用域链，一旦catch语句执行完毕，作用域链机会返回到之前的状态。</p>
-<h2 id="ES5_u4E2D_u7684_u8BCD_u6CD5_u73AF_u5883"><a href="#ES5_u4E2D_u7684_u8BCD_u6CD5_u73AF_u5883" class="headerlink" title="ES5中的词法环境"></a>ES5中的词法环境</h2><p>词法环境只是作用域换一个说法，下面是网易前端微专业课程的笔记</p>
-<p>在函数调用前，会初始化词法环境，词法环境的内容包括变量定义，函数定义和形参，然后保存当前词法环境。调用函数时，将刚才保存的词法环境作为外部词法环境，然后再保存函数内部的词法环境，在调用函数时就先从内部词法环境中找，如没有就继续到外部词法环境中找。</p>
-<p>只有函数可以定义词法环境，其他语句不会定义词法环境</p>
-<p>函数定义和函数表达式的词法环境是不同的</p>
-<pre><code>function A(){} //这是函数定义，函数定义的词法环境在定义该函数时就确定了
+        <h1 id="DOM_u4E8B_u4EF6"><a href="#DOM_u4E8B_u4EF6" class="headerlink" title="DOM事件"></a>DOM事件</h1><p><strong>事件流</strong>：描述的是从页面接受事件的顺序</p>
+<p><strong>事件冒泡</strong>：事件最开始最具体的元素接收，然后逐级向上传播</p>
+<p><strong>事件捕获</strong>：不太具体的节点最早接受到事件，最具体的节点最后接收到事件</p>
+<p><strong>HTML事件处理</strong>：直接将事件添加到HTML结构中<br>    btn.onclick=”function(){}”</p>
+<p><strong>DOM0级事件处理</strong>：把一个函数赋值给一个事件的处理程序属性<br>    btn.event = function(){};<br>    btn.event = null;</p>
+<p><strong>DOM2级事件处理</strong>：</p>
+<p>addEventListener()和removeEventListener(),接受三个参数：处理事件名，处理程序函数，布尔值(ture表示事件捕获，false表示事件冒泡),事件名前面不加on</p>
+<pre><code>btn.addEventListener(&quot;click&quot;,f,flase)    //绑定事件
+btn.removeEventListener(&quot;click&quot;,f,flase) //解除事件
+</code></pre><p><strong>IE事件处理程序</strong>：attachEvent(),detachEvent(),接受两个参数：处理事件名，处理程序函数；    事件名前面加on</p>
+<pre><code>btn.attachEvent(&quot;onclick&quot;,f)
+btn.detachEvent(&quot;onclick&quot;,f)
+</code></pre><p>使用DOM0进行事件绑定，一个事件只能绑定一个函数，如果再次绑定别的函数会将前一个覆盖，事实上同一个事件支持绑定多个函数。而用DOM2级和IE事件处理可以进行多次绑定，比如同一个节点的click事件绑定多个处理函数</p>
+<h2 id="u4E8B_u4EF6_u5BF9_u8C61"><a href="#u4E8B_u4EF6_u5BF9_u8C61" class="headerlink" title="事件对象"></a>事件对象</h2><p>当我们给事件绑定一个函数时，我们会将事件的信息（如click操作的绑定目标，事件类型等）作为一个对象传入函数，即绑定事件的事件的函数有一个默认的传入参数event，在IE的早期版本event对象要进行兼容</p>
+<pre><code>//传入函数
+function(event){  //event为添加的事件对象（参数名起为其他也是同样作用）
+    event = event || windows.event //IE中的event兼容
+  console.log(event.target)}   //显示事件目标
+</code></pre><h2 id="u4E8B_u4EF6_u4EE3_u7406"><a href="#u4E8B_u4EF6_u4EE3_u7406" class="headerlink" title="事件代理"></a>事件代理</h2><p>我们可以使用事件冒泡来实现事件代理，即我们要给一个父节点的所有子节点绑定同一事件时，我们不用遍历的方法给所有子节点都绑定事件，而是只给父节点绑定事件，这样子节点进行触发，冒泡到父节点，照样可以触发该事件。期间我们还可以对子节点进行筛选，只绑定需要绑定的子节点</p>
+<p>当使用事件代理时，target指的是被触发的事件节点，而currentTarget指的是始终是绑定事件的父节点。如果没有事件代理，则target和currentTarget相同</p>
+<h2 id="u4E8B_u4EF6_u89E6_u53D1"><a href="#u4E8B_u4EF6_u89E6_u53D1" class="headerlink" title="事件触发"></a>事件触发</h2><pre><code>eventTarget.dispatchEvent(type)
 
-(function (){})()//这是函数表达式，会立刻执行，函数表达式的词法环境在运行该表达式时才确定
-</code></pre><p>如果使用with语句，会临时改变当前语法环境，将with语句内的词法环境提到最前面。如果是预先定义的函数，调用它的词法环境不会受到影响，因为它的词法环境在定义时确定的。如果是立即执行的函数表达式，没有预先进行定义，那么它的词法环境是在运行时才确定的，如果它在with语句内，那么它的词法环境就是with语句里的词法环境。</p>
-<p>try··catch语句的catch和with一样也会临时改变词法环境，所起作用和with相同</p>
-<p>参考资料：<br><a href="http://www.cnblogs.com/lhb25/archive/2011/09/06/javascript-scope-chain.html" target="_blank" rel="external">http://www.cnblogs.com/lhb25/archive/2011/09/06/javascript-scope-chain.html</a></p>
-<p><a href="http://www.laruence.com/2009/05/28/863.html" target="_blank" rel="external">http://www.laruence.com/2009/05/28/863.html</a></p>
+事件节点.dispatchEvent(&quot;click&quot;)
+
+兼容IE：fireEvent(e)
+</code></pre><h2 id="u963B_u6B62_u4E8B_u4EF6_u5192_u6CE1_u548C_u9ED8_u8BA4_u884C_u4E3A"><a href="#u963B_u6B62_u4E8B_u4EF6_u5192_u6CE1_u548C_u9ED8_u8BA4_u884C_u4E3A" class="headerlink" title="阻止事件冒泡和默认行为"></a>阻止事件冒泡和默认行为</h2><pre><code>function x(e){
+    e=e||window.event
+
+    e.stopPropagation()||event.cancelBubble=true;   //阻止事件冒泡
+
+    e.preventDefaule()||event.returnValue=true;  //阻止事件默认行为（如阻止链接跳转，阻止文字被选定)         
+
+    e.stopImmediatePropagation()//阻止事件冒泡，并阻止该节点后续事件的触发
+}
+</code></pre><h2 id="u4E8B_u4EF6_u5C5E_u6027_u548C_u65B9_u6CD5"><a href="#u4E8B_u4EF6_u5C5E_u6027_u548C_u65B9_u6CD5" class="headerlink" title="事件属性和方法"></a>事件属性和方法</h2><pre><code>||后面的都是对IE进行兼容
+
+event || windows.event 事件对象
+
+type属性 获取事件类型
+
+target属性||srcElement属性 获取事件目标
+
+stopPropagation() 方法 || cancelBubble属性(true为阻止,event.cancelBubble=true） 阻止事件冒泡
+
+preventDefaule()方法 || returnValue属性(true为阻止,event.returnValue=true） 阻止事件默认行为(例如阻止a标签的跳转）
+
+e.stopImmediatePropagation()//阻止事件冒泡，并阻止该节点后续事件的触发
+</code></pre><p>参考：网易前端微专业，慕课网相关视频</p>
 
       
     </div>
@@ -244,18 +278,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/01/25/js-bibao/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          JS中的闭包
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/01/24/prototype/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">关于JS中的prototype</div>
+    <a href="/2016/01/25/js-bibao/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">JS中的闭包</div>
       <strong class="article-nav-caption">></strong>
     </a>
   

@@ -6,17 +6,20 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>JS中的闭包 | 尘生</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="闭包就是函数局部变量的集合，但这些局部变量在函数返回后还会继续存在。简单来说，闭包就是在另一个作用域中保存了一份它从上一级函数或作用域取得的变量（键值对），而这些键值对是不会随上一级函数的执行完成而销毁。">
+  <meta name="description" content="这里是对jS闭包概念的初步理解，后续还需要进行补充
+闭包就是函数局部变量的集合，但这些局部变量在函数返回后还会继续存在。简单来说，闭包就是在另一个作用域中保存了一份它从上一级函数或作用域取得的变量（键值对），而这些键值对是不会随上一级函数的执行完成而销毁。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JS中的闭包">
 <meta property="og:url" content="http://yoursite.com/2016/01/25/js-bibao/index.html">
 <meta property="og:site_name" content="尘生">
-<meta property="og:description" content="闭包就是函数局部变量的集合，但这些局部变量在函数返回后还会继续存在。简单来说，闭包就是在另一个作用域中保存了一份它从上一级函数或作用域取得的变量（键值对），而这些键值对是不会随上一级函数的执行完成而销毁。">
+<meta property="og:description" content="这里是对jS闭包概念的初步理解，后续还需要进行补充
+闭包就是函数局部变量的集合，但这些局部变量在函数返回后还会继续存在。简单来说，闭包就是在另一个作用域中保存了一份它从上一级函数或作用域取得的变量（键值对），而这些键值对是不会随上一级函数的执行完成而销毁。">
 <meta property="og:image" content="http://files.jb51.net/upload/20090527123259659.jpg">
-<meta property="og:updated_time" content="2016-01-25T08:22:48.164Z">
+<meta property="og:updated_time" content="2016-01-26T02:51:56.230Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS中的闭包">
-<meta name="twitter:description" content="闭包就是函数局部变量的集合，但这些局部变量在函数返回后还会继续存在。简单来说，闭包就是在另一个作用域中保存了一份它从上一级函数或作用域取得的变量（键值对），而这些键值对是不会随上一级函数的执行完成而销毁。">
+<meta name="twitter:description" content="这里是对jS闭包概念的初步理解，后续还需要进行补充
+闭包就是函数局部变量的集合，但这些局部变量在函数返回后还会继续存在。简单来说，闭包就是在另一个作用域中保存了一份它从上一级函数或作用域取得的变量（键值对），而这些键值对是不会随上一级函数的执行完成而销毁。">
   
     <link rel="alternative" href="/atom.xml" title="尘生" type="application/atom+xml">
   
@@ -109,7 +112,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a>
+						<a href="/tags/DOM/" style="font-size: 15px;">DOM</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a>
 					</div>
 				</section>
 				
@@ -210,13 +213,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>闭包就是函数局部变量的集合，但这些局部变量在函数返回后还会继续存在。简单来说，闭包就是在另一个作用域中保存了一份它从上一级函数或作用域取得的变量（键值对），而这些键值对是不会随上一级函数的执行完成而销毁。</p>
+        <p>这里是对jS闭包概念的初步理解，后续还需要进行补充</p>
+<p>闭包就是函数局部变量的集合，但这些局部变量在函数返回后还会继续存在。简单来说，闭包就是在另一个作用域中保存了一份它从上一级函数或作用域取得的变量（键值对），而这些键值对是不会随上一级函数的执行完成而销毁。</p>
 <a id="more"></a>
 <p>在一个函数内定义另一个函数就会产生闭包。</p>
 <p>我们可以利用闭包来实现对函数内局部变量结果的保存</p>
 <p>当函数a的内部函数b被函数a外的一个变量引用的时候，就创建了一个我们通常所谓的“闭包”。</p>
 <p><img src="http://files.jb51.net/upload/20090527123259659.jpg" alt=""></p>
-<p>在上面的例子中，由于闭包的存在使得函数a返回后，a中的i始终存在，这样每次执行c()，i都是自加1后alert出i的值。</p>
+<p>在上面的例子中，由于闭包的存在使得函数a返回后，a中的i始终在内存中存在，这样每次执行c()，i都是自加1后alert出i的值。</p>
 <h2 id="u95ED_u5305_u7684_u5E94_u7528_u573A_u666F"><a href="#u95ED_u5305_u7684_u5E94_u7528_u573A_u666F" class="headerlink" title="闭包的应用场景"></a>闭包的应用场景</h2><p>1.保护函数内的变量安全。以最开始的例子为例，函数a中i只有函数b才能访问，而无法通过其他途径访问到，因此保护了i的安全性。</p>
 <p>2.在内存中维持一个变量。依然如前例，由于闭包，函数a中i的一直存在于内存中，因此每次执行c()，都会给i自加1。</p>
 <p>3.通过保护变量的安全实现JS私有属性和私有方法（不能被外部访问）推荐阅读：<a href="http://javascript.crockford.com/private.html" target="_blank" rel="external">http://javascript.crockford.com/private.html</a></p>
@@ -231,6 +235,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2016/01/26/event/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          DOM中的事件
+        
+      </div>
+    </a>
   
   
     <a href="/2016/01/25/js-zuoyongyu/" id="article-nav-older" class="article-nav-link-wrap">
