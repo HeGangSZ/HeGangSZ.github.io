@@ -4,18 +4,18 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>about | 尘生</title>
+  <title>关于BFC的笔记 | 尘生</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="联系方式：QQ">
-<meta property="og:type" content="website">
-<meta property="og:title" content="about">
-<meta property="og:url" content="http://yoursite.com/about/index.html">
+  <meta name="description" content="由于浮动脱离了文档流，常常在布局上会产生一些影响，比如块级元素被浮动元素覆盖，行内元素环绕浮动元素，文档流中的父容器高度为0，这时我们常常会用一些方法来”闭合标签“。创建BFC简单来说就是消除浮动元素的这些影响，BFC会重新变成普通文档流的一部分">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于BFC的笔记">
+<meta property="og:url" content="http://yoursite.com/2016/01/27/css-BFC/index.html">
 <meta property="og:site_name" content="尘生">
-<meta property="og:description" content="联系方式：QQ">
-<meta property="og:updated_time" content="2016-01-16T14:04:06.041Z">
+<meta property="og:description" content="由于浮动脱离了文档流，常常在布局上会产生一些影响，比如块级元素被浮动元素覆盖，行内元素环绕浮动元素，文档流中的父容器高度为0，这时我们常常会用一些方法来”闭合标签“。创建BFC简单来说就是消除浮动元素的这些影响，BFC会重新变成普通文档流的一部分">
+<meta property="og:updated_time" content="2016-01-27T13:59:58.773Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="about">
-<meta name="twitter:description" content="联系方式：QQ">
+<meta name="twitter:title" content="关于BFC的笔记">
+<meta name="twitter:description" content="由于浮动脱离了文档流，常常在布局上会产生一些影响，比如块级元素被浮动元素覆盖，行内元素环绕浮动元素，文档流中的父容器高度为0，这时我们常常会用一些方法来”闭合标签“。创建BFC简单来说就是消除浮动元素的这些影响，BFC会重新变成普通文档流的一部分">
   
     <link rel="alternative" href="/atom.xml" title="尘生" type="application/atom+xml">
   
@@ -172,11 +172,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-css-BFC" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/about/index.html" class="article-date">
-  	<time datetime="2016-01-16T14:03:32.000Z" itemprop="datePublished">2016-01-16</time>
+      <a href="/2016/01/27/css-BFC/" class="article-date">
+  	<time datetime="2016-01-27T13:55:25.000Z" itemprop="datePublished">2016-01-27</time>
 </a>
     </div>
   
@@ -189,7 +189,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      about
+      关于BFC的笔记
     </h1>
   
 
@@ -197,6 +197,10 @@
       
       <div class="article-info article-info-post">
         
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
+	</div>
+
         
 
         <div class="clearfix"></div>
@@ -205,14 +209,54 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>联系方式：<br>QQ</p>
-
+        <p>由于浮动脱离了文档流，常常在布局上会产生一些影响，比如块级元素被浮动元素覆盖，行内元素环绕浮动元素，文档流中的父容器高度为0，这时我们常常会用一些方法来”闭合标签“。创建BFC简单来说就是消除浮动元素的这些影响，BFC会重新变成普通文档流的一部分</p>
+<a id="more"></a>
+<h2 id="u6D6E_u52A8_u9020_u6210_u7684_u95EE_u9898"><a href="#u6D6E_u52A8_u9020_u6210_u7684_u95EE_u9898" class="headerlink" title="浮动造成的问题"></a>浮动造成的问题</h2><p>如果子标签都浮动而父标签还在普通流中，那么就会产生“高度塌陷”，即父容器的高度会为0，因为浮动元素不属于普通流，父容器并不“包括”子标签。</p>
+<p>我们一般闭合浮动的方法有</p>
+<ul>
+<li><p>1.在父容器设置overflow：hidden或auto，并设置zoom：1触发IE的haslayout</p>
+</li>
+<li><p>2.子标签尾部添加一个标签设置clear：both来消除浮动。</p>
+</li>
+</ul>
+<h2 id="BFC"><a href="#BFC" class="headerlink" title="BFC"></a>BFC</h2><p>事实上是触发了BFC来达到这个效果<br>那就是 Block formatting contexts，以下简称 BFC。</p>
+<p>那么如何触发BFC呢？</p>
+<ul>
+<li><p>float 除了none以外的值 </p>
+</li>
+<li><p>overflow 除了visible 以外的值（hidden，auto，scroll ） </p>
+</li>
+<li><p>display (table-cell，table-caption，inline-block) </p>
+</li>
+<li><p>position（absolute，fixed） </p>
+</li>
+<li><p>fieldset元素</p>
+</li>
+</ul>
+<h2 id="BFC_u7684_u7279_u6027"><a href="#BFC_u7684_u7279_u6027" class="headerlink" title="BFC的特性"></a>BFC的特性</h2><h3 id="1_29_u4F1A_u963B_u6B62_u5916_u8FB9_u8DDD_u53E0_u52A0"><a href="#1_29_u4F1A_u963B_u6B62_u5916_u8FB9_u8DDD_u53E0_u52A0" class="headerlink" title="1)会阻止外边距叠加"></a>1)会阻止外边距叠加</h3><p>当两个相邻的块框在同一个BFC中时，它们之间垂直方向的外边距会发生叠加。换句话说，如果这两个相邻的块框不属于同一个BFC，那么它们的外边距就不会叠加。</p>
+<h3 id="2_29_u4E0D_u4F1A_u91CD_u53E0_u6D6E_u52A8_u5143_u7D20"><a href="#2_29_u4E0D_u4F1A_u91CD_u53E0_u6D6E_u52A8_u5143_u7D20" class="headerlink" title="2)不会重叠浮动元素"></a>2)不会重叠浮动元素</h3><p>根据规定，一个BFC的边框不能和它里面的元素的外边距重叠。这就意味着浏览器将会给BFC创建隐式的外边距来阻止它和浮动元素的外边距叠加。由于这个原因，当给一个挨着浮动的BFC添加负的外边距时将会不起作用</p>
+<h3 id="3_29_u901A_u5E38_u53EF_u4EE5_u5305_u542B_u6D6E_u52A8"><a href="#3_29_u901A_u5E38_u53EF_u4EE5_u5305_u542B_u6D6E_u52A8" class="headerlink" title="3)通常可以包含浮动"></a>3)通常可以包含浮动</h3><p>通俗地来说：创建了BFC的元素就是一个独立的盒子，里面的子元素不会在布局上影响外面的元素，反之亦然，同时BFC任然属于文档中的普通流。</p>
+<h2 id="u66F4_u597D_u7684_u95ED_u5408_u6D6E_u52A8_u7684_u65B9_u6CD5"><a href="#u66F4_u597D_u7684_u95ED_u5408_u6D6E_u52A8_u7684_u65B9_u6CD5" class="headerlink" title="更好的闭合浮动的方法"></a>更好的闭合浮动的方法</h2><p>还有种方法是使用:after 伪元素</p>
+<p>需要注意的是 :after是伪元素（Pseudo-Element），不是伪类（某些CSS手册里面称之为“伪对象”），很多闭合浮动大全之类的文章都称之为伪类，不过csser要严谨一点，这是一种态度。<br>由于IE6-7不支持:after，使用 zoom:1触发 hasLayout。<br> 该方法源自于: How To Clear Floats Without Structural Markup<br>精简代码如下:</p>
+<pre><code> .clearfix:after {content:&quot;.&quot;; display:block; height:0; visibility:hidden; clear:both; }
+.clearfix { *zoom:1; }
+</code></pre>
       
     </div>
     
   </div>
   
     
+<nav id="article-nav">
+  
+  
+    <a href="/2016/01/26/event/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">DOM中的事件</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
   
 </article>
 
@@ -266,7 +310,7 @@
 		mathjax: true,
 		animate: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

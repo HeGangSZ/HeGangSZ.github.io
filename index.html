@@ -107,7 +107,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/DOM/" style="font-size: 15px;">DOM</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a>
+						<a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/DOM/" style="font-size: 15px;">DOM</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a>
 					</div>
 				</section>
 				
@@ -173,6 +173,66 @@
 
       <div class="body-wrap">
   
+    <article id="post-css-BFC" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/01/27/css-BFC/" class="article-date">
+  	<time datetime="2016-01-27T13:55:25.000Z" itemprop="datePublished">2016-01-27</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/27/css-BFC/">关于BFC的笔记</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>由于浮动脱离了文档流，常常在布局上会产生一些影响，比如块级元素被浮动元素覆盖，行内元素环绕浮动元素，文档流中的父容器高度为0，这时我们常常会用一些方法来”闭合标签“。创建BFC简单来说就是消除浮动元素的这些影响，BFC会重新变成普通文档流的一部分</p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/01/27/css-BFC/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-event" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -202,52 +262,6 @@
         <h1 id="DOM_u4E8B_u4EF6"><a href="#DOM_u4E8B_u4EF6" class="headerlink" title="DOM事件"></a>DOM事件</h1><p><strong>事件流</strong>：描述的是从页面接受事件的顺序</p>
 <p><strong>事件冒泡</strong>：事件最开始最具体的元素接收，然后逐级向上传播</p>
 <p><strong>事件捕获</strong>：不太具体的节点最早接受到事件，最具体的节点最后接收到事件</p>
-<p><strong>HTML事件处理</strong>：直接将事件添加到HTML结构中<br>    btn.onclick=”function(){}”</p>
-<p><strong>DOM0级事件处理</strong>：把一个函数赋值给一个事件的处理程序属性<br>    btn.event = function(){};<br>    btn.event = null;</p>
-<p><strong>DOM2级事件处理</strong>：</p>
-<p>addEventListener()和removeEventListener(),接受三个参数：处理事件名，处理程序函数，布尔值(ture表示事件捕获，false表示事件冒泡),事件名前面不加on</p>
-<pre><code>btn.addEventListener(&quot;click&quot;,f,flase)    //绑定事件
-btn.removeEventListener(&quot;click&quot;,f,flase) //解除事件
-</code></pre><p><strong>IE事件处理程序</strong>：attachEvent(),detachEvent(),接受两个参数：处理事件名，处理程序函数；    事件名前面加on</p>
-<pre><code>btn.attachEvent(&quot;onclick&quot;,f)
-btn.detachEvent(&quot;onclick&quot;,f)
-</code></pre><p>使用DOM0进行事件绑定，一个事件只能绑定一个函数，如果再次绑定别的函数会将前一个覆盖，事实上同一个事件支持绑定多个函数。而用DOM2级和IE事件处理可以进行多次绑定，比如同一个节点的click事件绑定多个处理函数</p>
-<h2 id="u4E8B_u4EF6_u5BF9_u8C61"><a href="#u4E8B_u4EF6_u5BF9_u8C61" class="headerlink" title="事件对象"></a>事件对象</h2><p>当我们给事件绑定一个函数时，我们会将事件的信息（如click操作的绑定目标，事件类型等）作为一个对象传入函数，即绑定事件的事件的函数有一个默认的传入参数event，在IE的早期版本event对象要进行兼容</p>
-<pre><code>//传入函数
-function(event){  //event为添加的事件对象（参数名起为其他也是同样作用）
-    event = event || windows.event //IE中的event兼容
-  console.log(event.target)}   //显示事件目标
-</code></pre><h2 id="u4E8B_u4EF6_u4EE3_u7406"><a href="#u4E8B_u4EF6_u4EE3_u7406" class="headerlink" title="事件代理"></a>事件代理</h2><p>我们可以使用事件冒泡来实现事件代理，即我们要给一个父节点的所有子节点绑定同一事件时，我们不用遍历的方法给所有子节点都绑定事件，而是只给父节点绑定事件，这样子节点进行触发，冒泡到父节点，照样可以触发该事件。期间我们还可以对子节点进行筛选，只绑定需要绑定的子节点</p>
-<p>当使用事件代理时，target指的是被触发的事件节点，而currentTarget指的是始终是绑定事件的父节点。如果没有事件代理，则target和currentTarget相同</p>
-<h2 id="u4E8B_u4EF6_u89E6_u53D1"><a href="#u4E8B_u4EF6_u89E6_u53D1" class="headerlink" title="事件触发"></a>事件触发</h2><pre><code>eventTarget.dispatchEvent(type)
-
-事件节点.dispatchEvent(&quot;click&quot;)
-
-兼容IE：fireEvent(e)
-</code></pre><h2 id="u963B_u6B62_u4E8B_u4EF6_u5192_u6CE1_u548C_u9ED8_u8BA4_u884C_u4E3A"><a href="#u963B_u6B62_u4E8B_u4EF6_u5192_u6CE1_u548C_u9ED8_u8BA4_u884C_u4E3A" class="headerlink" title="阻止事件冒泡和默认行为"></a>阻止事件冒泡和默认行为</h2><pre><code>function x(e){
-    e=e||window.event
-
-    e.stopPropagation()||event.cancelBubble=true;   //阻止事件冒泡
-
-    e.preventDefaule()||event.returnValue=true;  //阻止事件默认行为（如阻止链接跳转，阻止文字被选定)         
-
-    e.stopImmediatePropagation()//阻止事件冒泡，并阻止该节点后续事件的触发
-}
-</code></pre><h2 id="u4E8B_u4EF6_u5C5E_u6027_u548C_u65B9_u6CD5"><a href="#u4E8B_u4EF6_u5C5E_u6027_u548C_u65B9_u6CD5" class="headerlink" title="事件属性和方法"></a>事件属性和方法</h2><pre><code>||后面的都是对IE进行兼容
-
-event || windows.event 事件对象
-
-type属性 获取事件类型
-
-target属性||srcElement属性 获取事件目标
-
-stopPropagation() 方法 || cancelBubble属性(true为阻止,event.cancelBubble=true） 阻止事件冒泡
-
-preventDefaule()方法 || returnValue属性(true为阻止,event.returnValue=true） 阻止事件默认行为(例如阻止a标签的跳转）
-
-e.stopImmediatePropagation()//阻止事件冒泡，并阻止该节点后续事件的触发
-</code></pre><p>参考：网易前端微专业，慕课网相关视频</p>
-
       
     </div>
     
@@ -260,6 +274,10 @@ e.stopImmediatePropagation()//阻止事件冒泡，并阻止该节点后续事�
 
       
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/01/26/event/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
