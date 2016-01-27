@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>关于BFC的笔记 | 尘生</title>
+  <title>关于BFC | 尘生</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="由于浮动脱离了文档流，常常在布局上会产生一些影响，比如块级元素被浮动元素覆盖，行内元素环绕浮动元素，文档流中的父容器高度为0，这时我们常常会用一些方法来”闭合标签“。创建BFC简单来说就是消除浮动元素的这些影响，BFC会重新变成普通文档流的一部分">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于BFC的笔记">
+<meta property="og:title" content="关于BFC">
 <meta property="og:url" content="http://yoursite.com/2016/01/27/css-BFC/index.html">
 <meta property="og:site_name" content="尘生">
 <meta property="og:description" content="由于浮动脱离了文档流，常常在布局上会产生一些影响，比如块级元素被浮动元素覆盖，行内元素环绕浮动元素，文档流中的父容器高度为0，这时我们常常会用一些方法来”闭合标签“。创建BFC简单来说就是消除浮动元素的这些影响，BFC会重新变成普通文档流的一部分">
-<meta property="og:updated_time" content="2016-01-27T13:59:58.773Z">
+<meta property="og:updated_time" content="2016-01-27T14:02:29.701Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于BFC的笔记">
+<meta name="twitter:title" content="关于BFC">
 <meta name="twitter:description" content="由于浮动脱离了文档流，常常在布局上会产生一些影响，比如块级元素被浮动元素覆盖，行内元素环绕浮动元素，文档流中的父容器高度为0，这时我们常常会用一些方法来”闭合标签“。创建BFC简单来说就是消除浮动元素的这些影响，BFC会重新变成普通文档流的一部分">
   
     <link rel="alternative" href="/atom.xml" title="尘生" type="application/atom+xml">
@@ -189,7 +189,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      关于BFC的笔记
+      关于BFC
     </h1>
   
 
@@ -240,7 +240,8 @@
 <p>需要注意的是 :after是伪元素（Pseudo-Element），不是伪类（某些CSS手册里面称之为“伪对象”），很多闭合浮动大全之类的文章都称之为伪类，不过csser要严谨一点，这是一种态度。<br>由于IE6-7不支持:after，使用 zoom:1触发 hasLayout。<br> 该方法源自于: How To Clear Floats Without Structural Markup<br>精简代码如下:</p>
 <pre><code> .clearfix:after {content:&quot;.&quot;; display:block; height:0; visibility:hidden; clear:both; }
 .clearfix { *zoom:1; }
-</code></pre>
+</code></pre><p>参考资料：<br><a href="http://www.iyunlu.com/view/css-xhtml/55.html" target="_blank" rel="external">http://www.iyunlu.com/view/css-xhtml/55.html</a></p>
+
       
     </div>
     
