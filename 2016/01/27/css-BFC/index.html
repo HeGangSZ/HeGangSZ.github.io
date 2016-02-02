@@ -12,7 +12,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/01/27/css-BFC/index.html">
 <meta property="og:site_name" content="尘生">
 <meta property="og:description" content="由于浮动脱离了文档流，常常在布局上会产生一些影响，比如块级元素被浮动元素覆盖，行内元素环绕浮动元素，文档流中的父容器高度为0，这时我们常常会用一些方法来”闭合标签“。创建BFC简单来说就是消除浮动元素的这些影响，BFC会重新变成普通文档流的一部分">
-<meta property="og:updated_time" content="2016-01-27T14:02:29.701Z">
+<meta property="og:updated_time" content="2016-02-02T10:37:04.368Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于BFC">
 <meta name="twitter:description" content="由于浮动脱离了文档流，常常在布局上会产生一些影响，比如块级元素被浮动元素覆盖，行内元素环绕浮动元素，文档流中的父容器高度为0，这时我们常常会用一些方法来”闭合标签“。创建BFC简单来说就是消除浮动元素的这些影响，BFC会重新变成普通文档流的一部分">
@@ -237,9 +237,8 @@
 <h3 id="2_29_u4E0D_u4F1A_u91CD_u53E0_u6D6E_u52A8_u5143_u7D20"><a href="#2_29_u4E0D_u4F1A_u91CD_u53E0_u6D6E_u52A8_u5143_u7D20" class="headerlink" title="2)不会重叠浮动元素"></a>2)不会重叠浮动元素</h3><p>根据规定，一个BFC的边框不能和它里面的元素的外边距重叠。这就意味着浏览器将会给BFC创建隐式的外边距来阻止它和浮动元素的外边距叠加。由于这个原因，当给一个挨着浮动的BFC添加负的外边距时将会不起作用</p>
 <h3 id="3_29_u901A_u5E38_u53EF_u4EE5_u5305_u542B_u6D6E_u52A8"><a href="#3_29_u901A_u5E38_u53EF_u4EE5_u5305_u542B_u6D6E_u52A8" class="headerlink" title="3)通常可以包含浮动"></a>3)通常可以包含浮动</h3><p>通俗地来说：创建了BFC的元素就是一个独立的盒子，里面的子元素不会在布局上影响外面的元素，反之亦然，同时BFC任然属于文档中的普通流。</p>
 <h2 id="u66F4_u597D_u7684_u95ED_u5408_u6D6E_u52A8_u7684_u65B9_u6CD5"><a href="#u66F4_u597D_u7684_u95ED_u5408_u6D6E_u52A8_u7684_u65B9_u6CD5" class="headerlink" title="更好的闭合浮动的方法"></a>更好的闭合浮动的方法</h2><p>还有种方法是使用:after 伪元素</p>
-<p>需要注意的是 :after是伪元素（Pseudo-Element），不是伪类（某些CSS手册里面称之为“伪对象”），很多闭合浮动大全之类的文章都称之为伪类，不过csser要严谨一点，这是一种态度。<br>由于IE6-7不支持:after，使用 zoom:1触发 hasLayout。<br> 该方法源自于: How To Clear Floats Without Structural Markup<br>精简代码如下:</p>
-<pre><code> .clearfix:after {content:&quot;.&quot;; display:block; height:0; visibility:hidden; clear:both; }
-.clearfix { *zoom:1; }
+<pre><code>.clearfix:after{clear:both;content:&quot;\200B&quot;;display:block;height:0;}
+.clearfix{*zoom:1;}
 </code></pre><p>参考资料：<br><a href="http://www.iyunlu.com/view/css-xhtml/55.html" target="_blank" rel="external">http://www.iyunlu.com/view/css-xhtml/55.html</a></p>
 
       
