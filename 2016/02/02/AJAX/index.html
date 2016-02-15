@@ -12,7 +12,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/02/02/AJAX/index.html">
 <meta property="og:site_name" content="尘生">
 <meta property="og:description" content="AJAX是一种JS异步处理数据的技术，通过AJAX可以从服务器中读取相应信息而且是异步进行的，只有当数据接收并解析完毕之后才传回JS进行进一步处理，防止因同步发生信息阻塞，使用户无法进行下一步操作，下面是创建ajax对象的过程，通过调用这个函数，我们便可以以异步方式读取数据了。">
-<meta property="og:updated_time" content="2016-02-02T10:32:42.708Z">
+<meta property="og:updated_time" content="2016-02-03T04:05:36.863Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AJAX">
 <meta name="twitter:description" content="AJAX是一种JS异步处理数据的技术，通过AJAX可以从服务器中读取相应信息而且是异步进行的，只有当数据接收并解析完毕之后才传回JS进行进一步处理，防止因同步发生信息阻塞，使用户无法进行下一步操作，下面是创建ajax对象的过程，通过调用这个函数，我们便可以以异步方式读取数据了。">
@@ -108,7 +108,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/AJAX/" style="font-size: 10px;">AJAX</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/DOM/" style="font-size: 15px;">DOM</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a>
+						<a href="/tags/AJAX/" style="font-size: 10px;">AJAX</a> <a href="/tags/CSS/" style="font-size: 15px;">CSS</a> <a href="/tags/DOM/" style="font-size: 15px;">DOM</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a>
 					</div>
 				</section>
 				
@@ -221,8 +221,8 @@
         oAjax = new ActiveXObject()
     }
 
-    //和服务器连接，有get和post方法两种，ture表示异步
-    oAjax.open(&apos;GET&apos;,url,true);
+    //和服务器连接，有get和post方法两种，ture表示异步，后面加Date是为了防止浏览器访问缓存
+    oAjax.open(&apos;GET&apos;,url+&quot;?t=&quot;+new Date().getDate(),true);
 
     //发送请求
     oAjax.send();
@@ -239,6 +239,77 @@
         }
     }
 }
+</code></pre><p>上面是get方法，如果是post方法则中间两步有变更<br>        //url后面不加参数<br>        oAjax.open(‘POST’,url);</p>
+<pre><code>oAjax.setRequestHeader(&quot;Content-type&quot;,&quot;application/x-www-form-urlencoded&quot;);
+
+传入参数
+var data = &quot;name=&quot; + &quot;xiaoming&quot; 
+            + &quot;&amp;number=&quot; + &quot;13&quot;
+            + &quot;&amp;sex=&quot; + &quot;man&quot;
+            + &quot;&amp;job=&quot; + &quot;student&quot;;
+
+//发送请求,将参数传入
+oAjax.send(date);
+</code></pre><p>下面对get和post方法进行封装</p>
+<pre><code>/**
+ *
+ * @param string url  
+ * @param object options  
+ *      //type: string post或者get，可以有一个默认值
+        //data: 发送的数据，为一个键值对象或者为一个用&amp;连接的赋值字符串
+        //onsuccess: function 成功时的调用函数
+        //onfail: function 失败时的调用函数
+ */
+function ajax(url, options) {
+    //创建ajax对象
+    var oAjax = null;
+    if (window.XMLHttpRequest) {
+        oAjax = new XMLHttpRequest()
+    }
+    else{
+    oAjax = new ActiveXObject()}
+
+
+    var type = options.type.toUpperCase() || &quot;GET&quot;;
+    var date = options.date || &quot;&quot;;
+    var parm = null
+    var onsuccess = options.onsuccess || null
+    var onfail = options.onfail || function () {
+            alert(oAjax.status)
+        }
+    if (typeof date === &quot;object&quot;) {
+        parm = [];
+        for (var k in date) {
+            if (date.hasOwnProperty) {
+                parm.push(k + &quot;=&quot; + date[k])
+            }
+        }
+        parm = parm.join(&quot;&amp;&quot;)
+    }
+    if (type == &quot;GET&quot;) {
+        oAjax.open(&apos;GET&apos;, url + &quot;?&quot; + parm);
+        console.log(url + &quot;?&quot; + parm)
+        oAjax.send();
+    }
+    else {
+        oAjax.open(type, url);
+        oAjax.setRequestHeader(&quot;Content-type&quot;, &quot;application/x-www-form-urlencoded&quot;);
+        oAjax.send(parm);
+        console.log(parm)
+    }
+
+    oAjax.onreadystatechange = function () {
+        if (oAjax.readyState == 4) {     //当从服务器返回的信息解析完毕后
+            if (oAjax.status == 200) {   //当服务器返回状态码为200时执行成功函数
+                onsuccess(oAjax.responseText) //responseText是解析完的文件内容
+            }
+            else {
+                onfail(oAjax.responseText)
+            }
+
+        }
+    }
+}
 </code></pre><p>参考资料:妙味课堂基础篇</p>
 
       
@@ -248,6 +319,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2016/02/15/reset/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          CSS reset和Normalize.css
+        
+      </div>
+    </a>
   
   
     <a href="/2016/01/27/css-BFC/" id="article-nav-older" class="article-nav-link-wrap">
