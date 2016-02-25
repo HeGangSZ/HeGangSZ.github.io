@@ -4,17 +4,18 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Tag: git | 尘生</title>
+  <title>使用weinre实时调试移动端页面 | 尘生</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="尘生">
-<meta property="og:type" content="website">
-<meta property="og:title" content="尘生">
-<meta property="og:url" content="http://yoursite.com/tags/git/index.html">
+  <meta name="description" content="使用weinre实时调试移动端页面weinre可以对移动端的页面进行调试，做到“立改立现”的效果">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用weinre实时调试移动端页面">
+<meta property="og:url" content="http://yoursite.com/2016/02/25/weinre/index.html">
 <meta property="og:site_name" content="尘生">
-<meta property="og:description" content="尘生">
+<meta property="og:description" content="使用weinre实时调试移动端页面weinre可以对移动端的页面进行调试，做到“立改立现”的效果">
+<meta property="og:updated_time" content="2016-02-25T03:05:38.904Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="尘生">
-<meta name="twitter:description" content="尘生">
+<meta name="twitter:title" content="使用weinre实时调试移动端页面">
+<meta name="twitter:description" content="使用weinre实时调试移动端页面weinre可以对移动端的页面进行调试，做到“立改立现”的效果">
   
     <link rel="alternative" href="/atom.xml" title="尘生" type="application/atom+xml">
   
@@ -171,53 +172,102 @@
 	</div>
 </nav>
 
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-weinre" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/01/18/git/" class="archive-article-date">
-  	<time datetime="2016-01-17T16:06:22.000Z" itemprop="datePublished">Jan 18</time>
+    <div class="article-meta">
+      <a href="/2016/02/25/weinre/" class="article-date">
+  	<time datetime="2016-02-25T03:04:16.000Z" itemprop="datePublished">2016-02-25</time>
 </a>
-        </div>
-    	 
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/18/git/">git学习记录</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      使用weinre实时调试移动端页面
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/weinre/">weinre</a></li></ul>
 	</div>
 
-          
+        
 
-        </div>
         <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
+      </div>
+      
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="u4F7F_u7528weinre_u5B9E_u65F6_u8C03_u8BD5_u79FB_u52A8_u7AEF_u9875_u9762"><a href="#u4F7F_u7528weinre_u5B9E_u65F6_u8C03_u8BD5_u79FB_u52A8_u7AEF_u9875_u9762" class="headerlink" title="使用weinre实时调试移动端页面"></a>使用weinre实时调试移动端页面</h1><p>weinre可以对移动端的页面进行调试，做到“立改立现”的效果</p>
+<a id="more"></a>
+<h2 id="npm_u5B89_u88C5"><a href="#npm_u5B89_u88C5" class="headerlink" title="npm安装"></a>npm安装</h2><pre><code>npm install -g weinre
+</code></pre><h2 id="u542F_u52A8_u670D_u52A1"><a href="#u542F_u52A8_u670D_u52A1" class="headerlink" title="启动服务"></a>启动服务</h2><pre><code>weinre --boundHost -all- --httpPort 8082
+//注意这个端口不要和xampp的相同，不然会被xampp占用了
+</code></pre><p>这时打开localhost:8082就能进入weinre了</p>
+<h2 id="u5D4C_u5165target_script"><a href="#u5D4C_u5165target_script" class="headerlink" title="嵌入target script"></a>嵌入target script</h2><p>在页面中嵌入target script，这样打开调试页面才能被weinre检测到</p>
+<p>在页面中插入  </p>
+<pre><code>&lt;script src=&quot;http://192.168.1.117:8082/target/target-script-min.js#anonymous&quot; type=&quot;text/javascript&quot;&gt;
+</code></pre><p>本地地址是本机的ip地址，端口是weinre的端口</p>
+<h2 id="u6253_u5F00xampp"><a href="#u6253_u5F00xampp" class="headerlink" title="打开xampp"></a>打开xampp</h2><p>打开xampp，将需调试页面放到htdocs文件夹</p>
+<h2 id="u5728_u79FB_u52A8_u7AEF_u6253_u5F00_u9875_u9762"><a href="#u5728_u79FB_u52A8_u7AEF_u6253_u5F00_u9875_u9762" class="headerlink" title="在移动端打开页面"></a>在移动端打开页面</h2><pre><code>http://192.168.1.117:8081/mobile/index.html
+</code></pre><p>本地地址是本机的ip地址，端口是xampp的端口</p>
+<p>移动端需和调试页面的电脑在同一局域网内</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/02/15/reset/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">CSS reset</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+
 
 </div>
       <footer id="footer">
@@ -243,9 +293,9 @@
 		mathjax: true,
 		animate: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false
 	}
